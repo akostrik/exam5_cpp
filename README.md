@@ -9,14 +9,14 @@ constructor(name, title)
 getName                                   // returns a ref to const string, callable on a constant Warlock
 getTitle                                  // returns a ref to const string, callable on a constant Warlock
 void setTitle(a ref to const std::string)
-void introduce() const                    // displays `<NAME>: I am <NAME>, <TITLE>!`
+void introduce() const
 ```
 ```
-  Warlock bob;                            // Does not compile, can not be instantiated without a name and a title
-  Warlock bob("Bob", "the magnificent");  // Compiles
-  Warlock jim("Jim", "the nauseating");   // Compiles
-  bob = jim;                              // Does not compile, can not be copied without a name and a title
-  Warlock jack(jim);                      // Does not compile, can not be instantiated by copy a name and a title
+  Warlock bob;                            // does not compile, can not be instantiated without a name and a title
+  Warlock bob("Bob", "the magnificent");  // compiles
+  Warlock jim("Jim", "the nauseating");   // compiles
+  bob = jim;                              // does not compile, can not be copied without a name and a title
+  Warlock jack(jim);                      // does not compile, can not be instantiated by copy a name and a title
 ```
 ```
 int main() {
@@ -47,20 +47,20 @@ Richard: My job here is done!$
 ```
 protected std::string name
 protected std::string effects
-constructor                   // takes its name and its effects, in that order
+constructor(name, effects)
 getName()                     // callable on a constant object
-getEffects()                  // returns strings, callable on a constant object
-clone                         // pure method, returns a pointer to ASpell, callable on a constant object
-a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
+std::string getEffects()      // callable on a constant object
+ASpell * clone                // pure method, callable on a constant object
+launch(const &ATarget)        // takes a ref to constant ATarget, calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
 ## **ATarget**, abstract class in Coplien's form
 ```
-string type                   // attribute
-constructor                   // that takes its type
-getType()                     // returns a reference to constant string
+std::string type
+constructor(type)
+const std::string &getType()  // returns a reference to constant string
 clone()                       // a pure method, callable on a constant object
-getHitBySpell()               // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
+getHitBySpell(const &ASpell)  // takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
 ```
 
 ## **Fwoosh**, an implementation of ASpell
