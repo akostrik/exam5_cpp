@@ -9,6 +9,7 @@ getName                                 // returns a ref to const string, callab
 getTitle                                // returns a ref to const string, callable on a constant Warlock
 setTitle                                // returns void and takes a ref to const string
 constructor(name, title)
+void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
 * Warlock is not able to be copied, instantiated by copy, or instantiated without a name and a title:
 ```
@@ -20,7 +21,6 @@ Warlock jack(jim);                      // Does not compile
 ```
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
 * When he dies, he says: `<NAME>: My job here is done!`  
-* Warlock is able to introduce himself: `void introduce() const;` displays `<NAME>: I am <NAME>, <TITLE>!`
 * Example:
 ```
 int main()
