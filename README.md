@@ -1,18 +1,15 @@
 # Warlock
-Make a Warlock class. It has to be in Coplien's form.
+* Make a Warlock class 
+* It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
-* Private attributes :
 ```
-name (string)
-title (string)
+name (string)                                    // private attribute
+title (string)                                   // private attribute
+getName                                 // returns a ref to const string, callable on a constant Warlock
+getTitle                                // returns a ref to const string, callable on a constant Warlock
+setTitle                                // returns void and takes a ref to const string
+constructor(name, title)
 ```
-* getters (both getters will have to be callable on a constant Warlock), setter 
-```
-getName, returns a reference to constant string
-getTitle, returns a reference to constant string
-setTitle, returns void and takes a reference to constant string
-```
-* A constructor that takes, in this order, its name and title
 * Warlock is not able to be copied, instantiated by copy, or instantiated without a name and a title:
 ```
 Warlock bob;                            //Does not compile
@@ -24,8 +21,7 @@ Warlock jack(jim);                      //Does not compile
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
 * When he dies, he says: `<NAME>: My job here is done!`  
 * Warlock is able to introduce himself: ` void introduce() const;` must display: `<NAME>: I am <NAME>, <TITLE>!`
-
-Example:
+* Example:
 ```
 int main()
 {
@@ -41,8 +37,7 @@ int main()
   delete jack;
   return (0);
 }
-```
-```
+
 ~$ ./a.out | cat -e
 Richard: This looks like another boring day.$
 Richard: I am Richard, Mistress of Magma!$
@@ -57,50 +52,48 @@ Richard: My job here is done!$
 # 2
 * Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp
 * the switch statement is forbidden
-* Create an abstract class called ASpell, in Coplien's form:
+* Create an abstract class called **ASpell**, in Coplien's form
 ```
 name (string)     // protected attribute
 effects (string)  // protected attribute
 constructor       // takes its name and its effects, in that order
-getName()         // that 
-getEffects()      // returns strings
-clone             // pure method that returns a pointer to ASpell
-a launch function // takes a reference to constant ATarget
+getName()         // callable on a constant object
+getEffects()      // returns strings, callable on a constant object
+clone             // pure method, returns a pointer to ASpell, callable on a constant object
+a launch function // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
-* All these functions can be called on a constant object.
 
-* Create an ATarget abstract class, in Coplien's form:
+* Create an **ATarget** abstract class, in Coplien's form
 ```
 string type      // attribute
 constructor      // that takes its type
 getType()        // returns a reference to constant string
-clone()          // a pure method
+clone()          // a pure method, callable on a constant object
 getHitBySpell()  // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
 ```
-* All these functions can be called on a constant object.
 
-This one will simply call the getHitBySpell of the passed object, passing the current instance as parameter.
+* Create an implementation of ASpell called **Fwoosh**
+```
+default constructor    // sets the name to "Fwoosh" and the effects to "fwooshed"
+clone()                // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
+```
 
-When all this is done, create an implementation of ASpell called Fwoosh. Its default constructor will set the name to "Fwoosh" and the effects to "fwooshed". You will, of course, implement the clone() method. In the case of Fwoosh, it will return a pointer to a new Fwoosh object.
+* Create a concrete ATarget called **Dummy**
+* its type is "Target Practice Dummy"
+* clone() method
 
-In the same way, create a concrete ATarget called Dummy, the type of which is "Target Practice Dummy". You must also implement its clone() method.
+** Add to the Warlock the following member functions:
+```
+learnSpell(...)  // takes a pointer to ASpell, that makes the Warlock learn a spell
+forgetSpell(...) // takes a string corresponding a to a spell's name, and makes the Warlock forget it. If it's not a known spell, does nothing
+launchSpell(   ) // takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
+```
+A new attribute // store the spells your Warlock knows.  
+Several types fit the bill, it's up to you to choose the best one.
 
-Add to the Warlock the following member functions:
-
-* learnSpell, takes a pointer to ASpell, that makes the Warlock learn a spell
-* forgetSpell, takes a string corresponding a to a spell's name, and makes the
-  Warlock forget it. If it's not a known spell, does nothing.
-* launchSpell, takes a string (a spell name) and a reference to ATarget, that
-  launches the spell on the selected target. If it's not a known spell, does
-  nothing.
-
-You will need a new attribute to store the spells your Warlock knows. Several
-types fit the bill, it's up to you to choose the best one.
-
-Below is a possible test main and its expected output:
-
-int main()
-{
+Exemple:
+```
+int main() {
   Warlock richard("Richard", "the Titled");
 
   Dummy bob;
@@ -120,8 +113,68 @@ Richard: This looks like another boring day.$
 Richard: I am Richard, the Titled!$
 Target Practice Dummy has been fwooshed!$
 Richard: My job here is done!$
+```
 
 # 3
+* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp Fireball.hpp Fireball.cpp Polymorph.hpp Polymorph.cpp BrickWall.hpp BrickWall.cpp SpellBook.hpp SpellBook.cpp TargetGenerator.hpp TargetGenerator.cpp
+* the switch statement is forbidden
+
+* Create the following two spells, on the same model as Fwoosh:
+```
+Fireball (Name: "Fireball", Effects: "burnt to a crisp")
+Polymorph (Name: "Polymorph", Effects: "turned into a critter")
+```
+* just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
+* make a SpellBook class, in canonical form, that can't be copied or instantiated by copy. It will have the following functions:
+```
+void learnSpell(ASpell*), that COPIES a spell in the book
+void forgetSpell(string const &), that deletes a spell from the book, except if it isn't there
+ASpell* createSpell(string const &), that receives a string corresponding to the name of a spell, creates it, and returns it
+```
+Modify the Warlock, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.  
+The launchSpell function will have to use the SpellBook to create the spell it's attempting to launch.  
+Make a TargetGenerator class, in canonical form, and as before, non-copyable.
+
+It will have the following functions:
+```
+void learnTargetType(ATarget*)        // teaches a target to the generator
+void forgetTargetType(string const &) // that makes the generator forget a target type if it's known
+ATarget* createTarget(string const &) // that creates a target of the specified type
+```
+
+```
+int main() {
+  Warlock richard("Richard", "foo");
+  richard.setTitle("Hello, I'm Richard the Warlock!");
+  BrickWall model1;
+
+  Polymorph* polymorph = new Polymorph();
+  TargetGenerator tarGen;
+
+  tarGen.learnTargetType(&model1);
+  richard.learnSpell(polymorph);
+
+  Fireball* fireball = new Fireball();
+
+  richard.learnSpell(fireball);
+
+  ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+
+  richard.introduce();
+  richard.launchSpell("Polymorph", *wall);
+  richard.launchSpell("Fireball", *wall);
+}
+
+~$ ./a.out | cat -e
+Richard: This looks like another boring day.$
+Richard: I am Richard, Hello, I'm Richard the Warlock!!$
+Inconspicuous Red-brick Wall has been turned into a critter!$
+Inconspicuous Red-brick Wall has been burnt to a crisp!$
+Richard: My job here is done!$
+~$
+```
+
+# sources
 https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05  
 https://github.com/Saxsori/42-ExamRank05  
 https://github.com/pasqualerossi/42-School-Exam-Rank-05  
