@@ -42,8 +42,8 @@ Jack: My job here is done!$
 Richard: My job here is done!$
 ```
 # 2
-* Create an abstract class called **ASpell** in Coplien's form
-* switch is forbidden
+* Abstract class called **ASpell** in Coplien's form
+* `switch` is forbidden
 ```
 protected std::string name
 protected std::string effects
@@ -54,7 +54,7 @@ clone                         // pure method, returns a pointer to ASpell, calla
 a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
-* Create an **ATarget** abstract class, in Coplien's form
+* Abstract class **ATarget** in Coplien's form
 ```
 string type                   // attribute
 constructor                   // that takes its type
@@ -63,13 +63,13 @@ clone()                       // a pure method, callable on a constant object
 getHitBySpell()               // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
 ```
 
-* Create an implementation of ASpell called **Fwoosh**
+* **Fwoosh**, an implementation of ASpell
 ```
 default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
 clone()                       // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
-* Create a concrete ATarget called **Dummy**
+* **Dummy**, a concrete ATarget 
 * its type is "Target Practice Dummy"
 ```
 clone()
