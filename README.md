@@ -75,7 +75,7 @@ clone()                     // method, in the case of Fwoosh, returns a pointer 
 clone()
 ```
 
-** Add to the Warlock: 
+* Add to the Warlock: 
 ```
 learnSpell(...)             // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
 forgetSpell(...)            // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
