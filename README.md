@@ -1,7 +1,5 @@
 # 1
-* Make a Warlock class 
-* It has to be in Coplien's form 
-* Expected files Warlock.cpp Warlock.hpp
+* Warlock class in Coplien's form 
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value
 * When he dies, he says: `<NAME>: My job here is done!`  
 * Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
@@ -49,9 +47,8 @@ Richard: My job here is done!$
 ~$
 ```
 # 2
-* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp
-* the switch statement is forbidden
-* Create an abstract class called **ASpell**, in Coplien's form
+* Create an abstract class called **ASpell** in Coplien's form
+* switch is forbidden
 ```
 protected std::string name
 protected std::string effects
@@ -79,16 +76,15 @@ clone()                     // method, in the case of Fwoosh, returns a pointer 
 
 * Create a concrete ATarget called **Dummy**
 * its type is "Target Practice Dummy"
-* clone() method
+* `clone()` method
 
-** Add to the Warlock the following member functions:
+** Add to the Warlock: 
 ```
-learnSpell(...)  // takes a pointer to ASpell, that makes the Warlock learn a spell
-forgetSpell(...) // takes a string corresponding a to a spell's name, and makes the Warlock forget it. If it's not a known spell, does nothing
-launchSpell(   ) // takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
+learnSpell(...)             // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
+forgetSpell(...)            // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
+launchSpell(   )            // member function, takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
+A new attribute             // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
 ```
-A new attribute // store the spells your Warlock knows.  
-Several types fit the bill, it's up to you to choose the best one.
 
 Exemple:
 ```
@@ -115,9 +111,7 @@ Richard: My job here is done!$
 ```
 
 # 3
-* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp Fireball.hpp Fireball.cpp Polymorph.hpp Polymorph.cpp BrickWall.hpp BrickWall.cpp SpellBook.hpp SpellBook.cpp TargetGenerator.hpp TargetGenerator.cpp
-* the switch statement is forbidden
-
+* switch statement forbidden
 * Create the following two spells, on the same model as Fwoosh:
 ```
 Fireball (Name: "Fireball", Effects: "burnt to a crisp")
@@ -174,6 +168,8 @@ Richard: My job here is done!$
 ```
 
 # sources
+* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp
+* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp Fireball.hpp Fireball.cpp Polymorph.hpp Polymorph.cpp BrickWall.hpp BrickWall.cpp SpellBook.hpp SpellBook.cpp TargetGenerator.hpp TargetGenerator.cpp
 https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05  
 https://github.com/Saxsori/42-ExamRank05  
 https://github.com/pasqualerossi/42-School-Exam-Rank-05  
