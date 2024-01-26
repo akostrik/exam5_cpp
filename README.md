@@ -6,10 +6,10 @@
 private std::string name                         
 private std::string title                         
 constructor(name, title)
-getName                                 // returns a ref to const string, callable on a constant Warlock
-getTitle                                // returns a ref to const string, callable on a constant Warlock
+getName                                   // returns a ref to const string, callable on a constant Warlock
+getTitle                                  // returns a ref to const string, callable on a constant Warlock
 void setTitle(a ref to const std::string)
-void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
+void introduce() const                    // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
 ```
   Warlock bob;                            // Does not compile, can not be instantiated without a name and a title
@@ -56,17 +56,17 @@ a launch function             // takes a reference to constant ATarget,calls the
 
 * Create an **ATarget** abstract class, in Coplien's form
 ```
-string type                  // attribute
-constructor                  // that takes its type
-getType()                    // returns a reference to constant string
-clone()                      // a pure method, callable on a constant object
-getHitBySpell()              // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
+string type                   // attribute
+constructor                   // that takes its type
+getType()                     // returns a reference to constant string
+clone()                       // a pure method, callable on a constant object
+getHitBySpell()               // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
 ```
 
 * Create an implementation of ASpell called **Fwoosh**
 ```
-default constructor         // sets the name to "Fwoosh" and the effects to "fwooshed"
-clone()                     // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
+default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
+clone()                       // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
 * Create a concrete ATarget called **Dummy**
@@ -77,10 +77,10 @@ clone()
 
 * Add to the Warlock: 
 ```
-learnSpell(...)             // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
-forgetSpell(...)            // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
-launchSpell(   )            // member function, takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
-A new attribute             // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
+learnSpell(...)               // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
+forgetSpell(...)              // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
+launchSpell(   )              // member function, takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
+A new attribute               // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
 ```
 
 ```
