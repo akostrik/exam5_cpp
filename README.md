@@ -1,5 +1,5 @@
 # 1
-* Warlock class in Coplien's form 
+## Warlock class in Coplien's form 
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.`
 * When he dies, he says: `<NAME>: My job here is done!`  
 ```
@@ -42,7 +42,7 @@ Jack: My job here is done!$
 Richard: My job here is done!$
 ```
 # 2
-* Abstract class called **ASpell** in Coplien's form
+## Abstract class called **ASpell** in Coplien's form
 * `switch` is forbidden
 ```
 protected std::string name
@@ -54,7 +54,7 @@ clone                         // pure method, returns a pointer to ASpell, calla
 a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
-* Abstract class **ATarget** in Coplien's form
+## Abstract class **ATarget** in Coplien's form
 ```
 string type                   // attribute
 constructor                   // that takes its type
@@ -63,19 +63,19 @@ clone()                       // a pure method, callable on a constant object
 getHitBySpell()               // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
 ```
 
-* **Fwoosh**, an implementation of ASpell
+## **Fwoosh**, an implementation of ASpell
 ```
 default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
 clone()                       // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
-* **Dummy**, a concrete ATarget 
+## **Dummy**, a concrete ATarget 
 * its type is "Target Practice Dummy"
 ```
 clone()
 ```
 
-* Add to the Warlock: 
+## Add to the Warlock: 
 ```
 learnSpell(...)               // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
 forgetSpell(...)              // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
@@ -103,14 +103,16 @@ Richard: My job here is done!$
 ```
 
 # 3
-* switch statement forbidden
-* Create the following two spells, on the same model as Fwoosh:
+## Create two spells, on the same model as Fwoosh
+* `switch` is forbidden
 ```
 Fireball (Name: "Fireball", Effects: "burnt to a crisp")
 Polymorph (Name: "Polymorph", Effects: "turned into a critter")
 ```
 * just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
-* make a SpellBook class, in canonical form, that can't be copied or instantiated by copy. It will have the following functions:
+
+## SpellBook class, in canonical form
+can't be copied or instantiated by copy  
 ```
 void learnSpell(ASpell*), that COPIES a spell in the book
 void forgetSpell(string const &), that deletes a spell from the book, except if it isn't there
@@ -118,7 +120,9 @@ ASpell* createSpell(string const &), that receives a string corresponding to the
 ```
 Modify the Warlock, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.  
 The launchSpell function will have to use the SpellBook to create the spell it's attempting to launch.  
-Make a TargetGenerator class, in canonical form, and as before, non-copyable.
+
+## TargetGenerator class, in canonical form
+non-copyable  
 
 It will have the following functions:
 ```
