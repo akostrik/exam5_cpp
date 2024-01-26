@@ -3,12 +3,12 @@
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
 ```
-private string name                         
-private string title                         
+private std::string name                         
+private std::string title                         
 constructor(name, title)
 getName                                 // returns a ref to const string, callable on a constant Warlock
 getTitle                                // returns a ref to const string, callable on a constant Warlock
-void setTitle(a ref to const string)
+void setTitle(a ref to const std::string)
 void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
 * Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
@@ -55,28 +55,28 @@ Richard: My job here is done!$
 * the switch statement is forbidden
 * Create an abstract class called **ASpell**, in Coplien's form
 ```
-name (string)     // protected attribute
-effects (string)  // protected attribute
-constructor       // takes its name and its effects, in that order
-getName()         // callable on a constant object
-getEffects()      // returns strings, callable on a constant object
-clone             // pure method, returns a pointer to ASpell, callable on a constant object
-a launch function // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
+protected std::string name
+protected std::string effects
+constructor                   // takes its name and its effects, in that order
+getName()                     // callable on a constant object
+getEffects()                  // returns strings, callable on a constant object
+clone                         // pure method, returns a pointer to ASpell, callable on a constant object
+a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
 * Create an **ATarget** abstract class, in Coplien's form
 ```
-string type      // attribute
-constructor      // that takes its type
-getType()        // returns a reference to constant string
-clone()          // a pure method, callable on a constant object
-getHitBySpell()  // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
+string type                  // attribute
+constructor                  // that takes its type
+getType()                    // returns a reference to constant string
+clone()                      // a pure method, callable on a constant object
+getHitBySpell()              // function takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> is the ATarget's type, <EFFECTS> is the return of the ASpell's getEffects function)
 ```
 
 * Create an implementation of ASpell called **Fwoosh**
 ```
-default constructor    // sets the name to "Fwoosh" and the effects to "fwooshed"
-clone()                // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
+default constructor         // sets the name to "Fwoosh" and the effects to "fwooshed"
+clone()                     // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
 * Create a concrete ATarget called **Dummy**
