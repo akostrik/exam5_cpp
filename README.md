@@ -3,8 +3,8 @@
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
 ```
-name (string)                                    // private attribute
-title (string)                                   // private attribute
+name (string)                           // private attribute
+title (string)                          // private attribute
 getName                                 // returns a ref to const string, callable on a constant Warlock
 getTitle                                // returns a ref to const string, callable on a constant Warlock
 setTitle                                // returns void and takes a ref to const string
@@ -12,11 +12,11 @@ constructor(name, title)
 ```
 * Warlock is not able to be copied, instantiated by copy, or instantiated without a name and a title:
 ```
-Warlock bob;                            //Does not compile
-Warlock bob("Bob", "the magnificent");  //Compiles
-Warlock jim("Jim", "the nauseating");   //Compiles
-bob = jim;                              //Does not compile
-Warlock jack(jim);                      //Does not compile
+Warlock bob;                            // Does not compile
+Warlock bob("Bob", "the magnificent");  // Compiles
+Warlock jim("Jim", "the nauseating");   // Compiles
+bob = jim;                              // Does not compile
+Warlock jack(jim);                      // Does not compile
 ```
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
 * When he dies, he says: `<NAME>: My job here is done!`  
