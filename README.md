@@ -3,8 +3,8 @@
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
 ```
-private name (string)                         
-private title (string)                         
+private string name                         
+private string title                         
 constructor(name, title)
 getName                                 // returns a ref to const string, callable on a constant Warlock
 getTitle                                // returns a ref to const string, callable on a constant Warlock
