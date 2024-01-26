@@ -3,15 +3,16 @@
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
 ```
-name (string)                           // private attribute
-title (string)                          // private attribute
+private name (string)                         
+private title (string)                         
+constructor(name, title)
 getName                                 // returns a ref to const string, callable on a constant Warlock
 getTitle                                // returns a ref to const string, callable on a constant Warlock
-setTitle                                // returns void and takes a ref to const string
-constructor(name, title)
+void setTitle(a ref to const string)
 void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
-* Warlock is not able to be copied, instantiated by copy, or instantiated without a name and a title:
+* Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
+Exemple:
 ```
 Warlock bob;                            // Does not compile
 Warlock bob("Bob", "the magnificent");  // Compiles
