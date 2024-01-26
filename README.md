@@ -1,6 +1,6 @@
 # 1
 * Warlock class in Coplien's form 
-* Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value
+* Upon creation, the Warlock says: `<NAME>: This looks like another boring day.`
 * When he dies, he says: `<NAME>: My job here is done!`  
 * Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
 ```
