@@ -1,4 +1,4 @@
-# Warlock
+# 1
 * Make a Warlock class 
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
