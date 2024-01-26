@@ -42,7 +42,7 @@ Jack: My job here is done!$
 Richard: My job here is done!$
 ```
 # 2
-## Abstract class called **ASpell** in Coplien's form
+## **ASpell**, abstract class in Coplien's form
 * `switch` is forbidden
 ```
 protected std::string name
@@ -54,7 +54,7 @@ clone                         // pure method, returns a pointer to ASpell, calla
 a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
-## Abstract class **ATarget** in Coplien's form
+## **ATarget**, abstract class in Coplien's form
 ```
 string type                   // attribute
 constructor                   // that takes its type
@@ -123,8 +123,6 @@ The launchSpell function will have to use the SpellBook to create the spell it's
 
 ## TargetGenerator class, in canonical form
 non-copyable  
-
-It will have the following functions:
 ```
 void learnTargetType(ATarget*)        // teaches a target to the generator
 void forgetTargetType(string const &) // that makes the generator forget a target type if it's known
