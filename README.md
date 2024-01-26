@@ -20,7 +20,7 @@ Warlock jack(jim);                      // Does not compile
 ```
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
 * When he dies, he says: `<NAME>: My job here is done!`  
-* Warlock is able to introduce himself: ` void introduce() const;` must display: `<NAME>: I am <NAME>, <TITLE>!`
+* Warlock is able to introduce himself: `void introduce() const;` displays `<NAME>: I am <NAME>, <TITLE>!`
 * Example:
 ```
 int main()
@@ -141,7 +141,7 @@ void learnTargetType(ATarget*)        // teaches a target to the generator
 void forgetTargetType(string const &) // that makes the generator forget a target type if it's known
 ATarget* createTarget(string const &) // that creates a target of the specified type
 ```
-
+* Example:
 ```
 int main() {
   Warlock richard("Richard", "foo");
