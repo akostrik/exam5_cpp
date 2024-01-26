@@ -71,7 +71,9 @@ clone()                     // method, in the case of Fwoosh, returns a pointer 
 
 * Create a concrete ATarget called **Dummy**
 * its type is "Target Practice Dummy"
-* `clone()` method
+```
+clone()
+```
 
 ** Add to the Warlock: 
 ```
