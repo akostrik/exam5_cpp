@@ -2,7 +2,6 @@
 * Warlock class in Coplien's form 
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.`
 * When he dies, he says: `<NAME>: My job here is done!`  
-* Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
 ```
 private std::string name                         
 private std::string title                         
@@ -13,11 +12,11 @@ void setTitle(a ref to const std::string)
 void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
 ```
-  Warlock bob;                            // Does not compile
+  Warlock bob;                            // Does not compile, can not be instantiated without a name and a title
   Warlock bob("Bob", "the magnificent");  // Compiles
   Warlock jim("Jim", "the nauseating");   // Compiles
-  bob = jim;                              // Does not compile
-  Warlock jack(jim);                      // Does not compile
+  bob = jim;                              // Does not compile, can not be copied without a name and a title
+  Warlock jack(jim);                      // Does not compile, can not be instantiated by copy a name and a title
 ```
 ```
 int main() {
