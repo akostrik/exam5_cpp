@@ -1,5 +1,5 @@
 Make a Warlock class. It has to be in Coplien's form.
-* Expected files : Warlock.cpp Warlock.hpp
+* Expected files Warlock.cpp Warlock.hpp
 * Private attributes :
 ```
 name (string)
@@ -11,7 +11,7 @@ getName, returns a reference to constant string
 getTitle, returns a reference to constant string
 setTitle, returns void and takes a reference to constant string
 ```
-* Warlock has a constructor that takes, in this order, its name and title.  
+* A constructor that takes, in this order, its name and title
 * Warlock is not able to be copied, instantiated by copy, or instantiated without a name and a title:
 ```
 Warlock bob;                            //Does not compile
@@ -21,9 +21,8 @@ bob = jim;                              //Does not compile
 Warlock jack(jim);                      //Does not compile
 ```
 * Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
-** When he dies, he says: `<NAME>: My job here is done!`  
-* Warlock is able to introduce himself, while boasting with all its might: 
-` void introduce() const;` must display: `<NAME>: I am <NAME>, <TITLE>!`
+* When he dies, he says: `<NAME>: My job here is done!`  
+* Warlock is able to introduce himself: ` void introduce() const;` must display: `<NAME>: I am <NAME>, <TITLE>!`
 
 Example:
 ```
