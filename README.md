@@ -13,12 +13,14 @@ void setTitle(a ref to const std::string)
 void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
 ```
-int main() {
   Warlock bob;                            // Does not compile
   Warlock bob("Bob", "the magnificent");  // Compiles
   Warlock jim("Jim", "the nauseating");   // Compiles
   bob = jim;                              // Does not compile
   Warlock jack(jim);                      // Does not compile
+```
+```
+int main() {
   Warlock const    richard("Richard", "Mistress of Magma");
   richard.introduce();
   std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
