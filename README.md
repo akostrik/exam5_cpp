@@ -41,7 +41,6 @@ Jack: I am Jack, the Long!$
 Jack: I am Jack, the Mighty!$
 Jack: My job here is done!$
 Richard: My job here is done!$
-~$
 ```
 # 2
 * Create an abstract class called **ASpell** in Coplien's form
@@ -149,7 +148,6 @@ Richard: I am Richard, Hello, I'm Richard the Warlock!!$
 Inconspicuous Red-brick Wall has been turned into a critter!$
 Inconspicuous Red-brick Wall has been burnt to a crisp!$
 Richard: My job here is done!$
-~$
 ```
 
 # sources
