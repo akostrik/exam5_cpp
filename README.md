@@ -2,6 +2,9 @@
 * Make a Warlock class 
 * It has to be in Coplien's form 
 * Expected files Warlock.cpp Warlock.hpp
+* Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value
+* When he dies, he says: `<NAME>: My job here is done!`  
+* Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
 ```
 private std::string name                         
 private std::string title                         
@@ -11,8 +14,6 @@ getTitle                                // returns a ref to const string, callab
 void setTitle(a ref to const std::string)
 void introduce() const                  // displays `<NAME>: I am <NAME>, <TITLE>!`
 ```
-* Warlock is not able to be copied, instantiated by copy, instantiated without a name and a title
-Exemple:
 ```
 Warlock bob;                            // Does not compile
 Warlock bob("Bob", "the magnificent");  // Compiles
@@ -20,9 +21,6 @@ Warlock jim("Jim", "the nauseating");   // Compiles
 bob = jim;                              // Does not compile
 Warlock jack(jim);                      // Does not compile
 ```
-* Upon creation, the Warlock says: `<NAME>: This looks like another boring day.` Replace placeholder <NAME> by the appropriate value.    
-* When he dies, he says: `<NAME>: My job here is done!`  
-* Example:
 ```
 int main()
 {
