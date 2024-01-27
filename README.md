@@ -274,7 +274,7 @@ void introduce() const
 ```
 
 # 1 short subject
-## **ASpell**, 
+## ASpell 
 abstract class  
 Coplien's form  
 ```
@@ -287,7 +287,7 @@ ASpell * clone                // pure method, callable on a constant object
 launch(const &ATarget)        // takes a ref to constant ATarget, calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
-## **ATarget**
+## ATarget
 abstract class  
 Coplien's form  
 ```
@@ -298,14 +298,14 @@ clone()                       // a pure method, callable on a constant object
 getHitBySpell(const &ASpell)  // displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
 ```
 
-## **Fwoosh**
+## Fwoosh
 an implementation of ASpell  
 ```
 default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
 clone()                       // in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
-## **Dummy**
+## Dummy
 a concrete ATarget   
 its type is "Target Practice Dummy"  
 ```
@@ -325,6 +325,7 @@ A new attribute                              // store the spells your Warlock kn
 Create two spells, on the same model as Fwoosh  
 Fireball (Name: "Fireball", Effects: "burnt to a crisp")  
 Polymorph (Name: "Polymorph", Effects: "turned into a critter")  
+
 ## BrickWall
 Just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
 
