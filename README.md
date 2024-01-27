@@ -328,10 +328,10 @@ clone()
 
 ## Add to the Warlock: 
 ```
-learnSpell(...)               // member function, takes a pointer to ASpell, that makes the Warlock learn a spell
-forgetSpell(...)              // member function, takes a string corresponding a to a spell's name, makes the Warlock forget it. If it's not a known spell, does nothing
-launchSpell(   )              // member function, takes a string (a spell name) and a reference to ATarget, that launches the spell on the selected target. If it's not a known spell, does nothing
-A new attribute               // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
+learnSpell(ASpell*)                          // makes the Warlock learn a spell
+forgetSpell(std::string spellName)           // makes the Warlock forget it. If it's not a known spell, does nothing
+launchSpell(std::string spellName, &ATarget) // launches the spell on the selected target. If it's not a known spell, does nothing
+A new attribute                              // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
 ```
 
 # 2 short subject
