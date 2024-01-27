@@ -275,7 +275,6 @@ void introduce() const
 
 # 1 short subject
 ## **ASpell**, abstract class in Coplien's form
-* `switch` is forbidden
 ```
 protected std::string name
 protected std::string effects
@@ -317,11 +316,12 @@ A new attribute                              // store the spells your Warlock kn
 
 # 2 short subject
 ## Create two spells, on the same model as Fwoosh
-* `switch` is forbidden
+## Fireball, Polymorph
 ```
 Fireball (Name: "Fireball", Effects: "burnt to a crisp")
 Polymorph (Name: "Polymorph", Effects: "turned into a critter")
 ```
+## BrickWall
 * just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
 
 ## SpellBook class, in canonical form
