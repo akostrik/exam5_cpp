@@ -1,6 +1,7 @@
 # 0 full subject
 Assignment name  : cpp_module_00
 Expected files   : Warlock.cpp Warlock.hpp
+
 --------------------------------------------------------------------------------
 
 Make a Warlock class. It has to be in Coplien's form.
@@ -88,6 +89,7 @@ Expected files   : Warlock.cpp Warlock.hpp
 				   ATarget.hpp ATarget.cpp
 				   Fwoosh.hpp Fwoosh.cpp
 				   Dummy.hpp Dummy.cpp
+
 --------------------------------------------------------------------------------
 
 In the Warlock class, the switch statement is FORBIDDEN and its use would
