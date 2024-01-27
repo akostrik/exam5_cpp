@@ -309,9 +309,9 @@ launch(const &ATarget)        // takes a ref to constant ATarget, calls the getH
 ```
 std::string type
 constructor(type)
-const std::string &getType()  // returns a reference to constant string
+const std::string &getType()
 clone()                       // a pure method, callable on a constant object
-getHitBySpell(const &ASpell)  // takes a reference to constant ASpell, displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
+getHitBySpell(const &ASpell)  // displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
 ```
 
 ## **Fwoosh**, an implementation of ASpell
