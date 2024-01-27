@@ -207,7 +207,7 @@ Now, make a **SpellBook** class, in canonical form, that can't be copied or inst
 * ASpell* createSpell(string const &), that receives a string corresponding to
   the name of a spell, creates it, and returns it.
 
-Modify the Warlock, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.
+Modify the **Warlock**, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.
 
 The launchSpell function will have to use the SpellBook to create the spell it's attempting to launch.
 
