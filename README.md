@@ -274,7 +274,9 @@ void introduce() const
 ```
 
 # 1 short subject
-## **ASpell**, abstract class in Coplien's form
+## **ASpell**, 
+abstract class  
+Coplien's form  
 ```
 protected std::string name
 protected std::string effects
@@ -285,7 +287,9 @@ ASpell * clone                // pure method, callable on a constant object
 launch(const &ATarget)        // takes a ref to constant ATarget, calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
-## **ATarget**, abstract class in Coplien's form
+## **ATarget**
+abstract class  
+Coplien's form  
 ```
 std::string type
 constructor(type)
@@ -294,14 +298,16 @@ clone()                       // a pure method, callable on a constant object
 getHitBySpell(const &ASpell)  // displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
 ```
 
-## **Fwoosh**, an implementation of ASpell
+## **Fwoosh**
+an implementation of ASpell  
 ```
 default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
 clone()                       // in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
-## **Dummy**, a concrete ATarget 
-* its type is "Target Practice Dummy"
+## **Dummy**
+a concrete ATarget   
+its type is "Target Practice Dummy"  
 ```
 clone()
 ```
