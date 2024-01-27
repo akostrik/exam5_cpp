@@ -1,6 +1,6 @@
 # include "ASpell.hpp"
 
-ASpell::ASpell(std::string const name, std::string const effects) : _name(name), _effects(effects){
+ASpell::ASpell(std::string const name, std::string const effects) : _name(name), _effects(effects) {
 };
 
 ASpell::ASpell(const ASpell& obj) {
@@ -16,16 +16,15 @@ ASpell& ASpell::operator = (const ASpell& obj) {
   return *this;
 };
 
-std::string const &ASpell::getName() const {
+std::string const ASpell::getName() const {
   return _name;
 };
 
-std::string const &ASpell::getEffects() const {
+std::string const ASpell::getEffects() const {
   return _effects;
 };
 
-// calls the getHitBySpell of the passed object, passing the current instance as parameter
-void ASpell::launch(ATarget& target) const {
+void ASpell::launch(const ATarget& target) {
   target.getHitBySpell(*this);                                /// *
 };
 

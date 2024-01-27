@@ -22,7 +22,7 @@ const std::string& ATarget::getType() const {
   return _type;
 };
 
-void ATarget::getHitBySpell(const ASpell& s) {
+void ATarget::getHitBySpell(const ASpell& s) const {
   std::cout << _type << " has been " << s.getEffects() << "!\n";
 }
 
