@@ -90,7 +90,7 @@ Expected files   : Warlock.cpp Warlock.hpp
 In the Warlock class, the switch statement is FORBIDDEN and its use would
 result in a -42.
 
-Create an abstract class called ASpell, in Coplien's form, that has the
+Create an abstract class called **ASpell**, in Coplien's form, that has the
 following protected attributes:
 
 * name (string)
@@ -104,7 +104,7 @@ All these functions can be called on a constant object.
 
 ASpell has a constructor that takes its name and its effects, in that order.
 
-Now you will create an ATarget abstract class, in Coplien's form. It has a type
+Now you will create an **ATarget** abstract class, in Coplien's form. It has a type
 attribute, which is a string, and its associated getter, getType, that return a
 reference to constant string.
 
@@ -130,12 +130,12 @@ constant ATarget.
 This one will simply call the getHitBySpell of the passed object, passing the
 current instance as parameter.
 
-When all this is done, create an implementation of ASpell called Fwoosh. Its
+When all this is done, create an implementation of ASpell called **Fwoosh**. Its
 default constructor will set the name to "Fwoosh" and the effects to
 "fwooshed". You will, of course, implement the clone() method. In the case of
 Fwoosh, it will return a pointer to a new Fwoosh object.
 
-In the same way, create a concrete ATarget called Dummy, the type of which
+In the same way, create a concrete ATarget called **Dummy**, the type of which
 is "Target Practice Dummy". You must also implement its clone() method.
 
 Add to the Warlock the following member functions:
@@ -190,19 +190,16 @@ Expected files   : Warlock.cpp Warlock.hpp
        
 --------------------------------------------------------------------------------
 
-In the Warlock, SpellBook and TargetGenerator classes, the switch statement is
-FORBIDDEN and its use would result in a -42.
+In the Warlock, SpellBook and TargetGenerator classes, the switch statement is FORBIDDEN and its use would result in a -42.
 
 Create the following two spells, on the same model as Fwoosh:
 
-* Fireball (Name: "Fireball", Effects: "burnt to a crisp")
-* Polymorph (Name: "Polymorph", Effects: "turned into a critter")
+* **Fireball** (Name: "Fireball", Effects: "burnt to a crisp")
+* **Polymorph** (Name: "Polymorph", Effects: "turned into a critter")
 
-In addition to this, just so he won't have only dummy to attack, let's make a
-new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall").
+In addition to this, just so he won't have only dummy to attack, let's make a new target for him, which will be the **BrickWall** (Type: "Inconspicuous Red-brick Wall").
 
-Now, make a SpellBook class, in canonical form, that can't be copied or instantiated
-by copy. It will have the following functions:
+Now, make a **SpellBook** class, in canonical form, that can't be copied or instantiated by copy. It will have the following functions:
 
 * void learnSpell(ASpell*), that COPIES a spell in the book
 * void forgetSpell(string const &), that deletes a spell from the book, except
@@ -210,28 +207,18 @@ by copy. It will have the following functions:
 * ASpell* createSpell(string const &), that receives a string corresponding to
   the name of a spell, creates it, and returns it.
 
-Modify the Warlock, now, make it have a spell book that will be created with
-him and destroyed with him. Also make his learnSpell and forgetSpell functions
-call those of the spell book.
+Modify the Warlock, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.
 
-The launchSpell function will have to use the SpellBook to create the spell
-it's attempting to launch.
+The launchSpell function will have to use the SpellBook to create the spell it's attempting to launch.
 
-Make a TargetGenerator class, in canonical form, and as before,
-non-copyable.
+Make a **TargetGenerator** class, in canonical form, and as before, non-copyable.
 
 It will have the following functions:
-
 * void learnTargetType(ATarget*), teaches a target to the generator
+* void forgetTargetType(string const &), that makes the generator forget a   target type if it's known
+* ATarget* createTarget(string const &), that creates a target of the   specified type
 
-* void forgetTargetType(string const &), that makes the generator forget a
-  target type if it's known
-
-* ATarget* createTarget(string const &), that creates a target of the
-  specified type
-
-Phew, that's done. Now here's a test main. It's not very thorough, so make sure 
-to use your own aswell.
+Phew, that's done. Now here's a test main. It's not very thorough, so make sure to use your own aswell.
 ```
 int main()
 {
