@@ -9,6 +9,6 @@ Dummy::~Dummy() {
 };
 
 // if type is Dummy ?
-const ATarget* Dummy::clone () const {
+ATarget* Dummy::clone () const {
   return new Dummy();
 }
