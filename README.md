@@ -36,12 +36,12 @@ Upon creation, the Warlock says :
 
 <NAME>: This looks like another boring day.
 
-Of course, whenever we use placeholders like <NAME>, <TITLE>, etc...
-in outputs, you will replace them by the appropriate value. Without the < and >.
+Of course, whenever we use placeholders like `<NAME>`, `<TITLE`>, etc...
+in outputs, you will replace them by the appropriate value. Without the `<` and `>`.
 
 When he dies, he says:
 
-<NAME>: My job here is done!
+`<NAME>: My job here is done!`
 
 Our Warlock must also be able to introduce himself, while boasting with all its
 might.
@@ -51,10 +51,10 @@ So you will write the following function:
 
 It must display:
 
-<NAME>: I am <NAME>, <TITLE>!
+`<NAME>: I am <NAME>, <TITLE>!`
 
 Here's an example of a test main function and its associated output:
-
+```
 int main()
 {
   Warlock const richard("Richard", "Mistress of Magma");
@@ -81,6 +81,7 @@ Jack: I am Jack, the Mighty!$
 Jack: My job here is done!$
 Richard: My job here is done!$
 ~$
+```
 
 # 1 full subject
 Assignment name  : cpp01_02
@@ -124,9 +125,9 @@ constant ASpell.
 
 It will display :
 
-<TYPE> has been <EFFECTS>!
+`<TYPE> has been <EFFECTS>!`
 
-<TYPE> is the ATarget's type, and <EFFECTS> is the return of the ASpell's
+`<TYPE>` is the ATarget's type, and `<EFFECTS>` is the return of the ASpell's
 getEffects function.
 
 Finally, add to your ASpell class a launch function that takes a reference to
@@ -156,7 +157,7 @@ You will need a new attribute to store the spells your Warlock knows. Several
 types fit the bill, it's up to you to choose the best one.
 
 Below is a possible test main and its expected output:
-
+```
 int main()
 {
   Warlock richard("Richard", "the Titled");
@@ -178,6 +179,7 @@ Richard: This looks like another boring day.$
 Richard: I am Richard, the Titled!$
 Target Practice Dummy has been fwooshed!$
 Richard: My job here is done!$
+```
 
 # 2 full subject 
 Assignment name  : cpp_module_02
@@ -236,7 +238,7 @@ It will have the following functions:
 
 Phew, that's done. Now here's a test main. It's not very thorough, so make sure 
 to use your own aswell.
-
+```
 int main()
 {
   Warlock richard("Richard", "foo");
@@ -267,6 +269,7 @@ Inconspicuous Red-brick Wall has been turned into a critter!$
 Inconspicuous Red-brick Wall has been burnt to a crisp!$
 Richard: My job here is done!$
 ~$
+```
 
 # 0 short subject
 ## Warlock class in Coplien's form 
@@ -287,29 +290,6 @@ void introduce() const
   Warlock jim("Jim", "the nauseating");   // compiles
   bob = jim;                              // does not compile, can not be copied without a name and a title
   Warlock jack(jim);                      // does not compile, can not be instantiated by copy a name and a title
-```
-```
-int main() {
-  Warlock const    richard("Richard", "Mistress of Magma");
-  richard.introduce();
-  std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
-  Warlock*         jack = new Warlock("Jack", "the Long");
-  jack->introduce();
-  jack->setTitle("the Mighty");
-  jack->introduce();
-  delete jack;
-  return (0);
-}
-
-~$ ./a.out | cat -e
-Richard: This looks like another boring day.$
-Richard: I am Richard, Mistress of Magma!$
-Richard - Mistress of Magma$
-Jack: This looks like another boring day.$
-Jack: I am Jack, the Long!$
-Jack: I am Jack, the Mighty!$
-Jack: My job here is done!$
-Richard: My job here is done!$
 ```
 
 # 1 short subject
@@ -354,25 +334,6 @@ launchSpell(   )              // member function, takes a string (a spell name) 
 A new attribute               // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
 ```
 
-```
-int main() {
-  Warlock       richard("Richard", "the Titled");
-  Dummy         bob;
-  Fwoosh*       fwoosh = new Fwoosh();
-  richard.learnSpell(fwoosh);
-  richard.introduce();
-  richard.launchSpell("Fwoosh", bob);
-  richard.forgetSpell("Fwoosh");
-  richard.launchSpell("Fwoosh", bob);
-}
-
-~$ ./a.out | cat -e
-Richard: This looks like another boring day.$
-Richard: I am Richard, the Titled!$
-Target Practice Dummy has been fwooshed!$
-Richard: My job here is done!$
-```
-
 # 2 short subject
 ## Create two spells, on the same model as Fwoosh
 * `switch` is forbidden
@@ -398,30 +359,6 @@ non-copyable
 void learnTargetType(ATarget*)        // teaches a target to the generator
 void forgetTargetType(string const &) // that makes the generator forget a target type if it's known
 ATarget* createTarget(string const &) // that creates a target of the specified type
-```
-```
-int main() {
-  Warlock         richard("Richard", "foo");
-  richard.setTitle("Hello, I'm Richard the Warlock!");
-  BrickWall       model1;
-  Polymorph*      polymorph = new Polymorph();
-  TargetGenerator tarGen;
-  tarGen.learnTargetType(&model1);
-  richard.learnSpell(polymorph);
-  Fireball*       fireball = new Fireball();
-  richard.learnSpell(fireball);
-  ATarget*        wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
-  richard.introduce();
-  richard.launchSpell("Polymorph", *wall);
-  richard.launchSpell("Fireball", *wall);
-}
-
-~$ ./a.out | cat -e
-Richard: This looks like another boring day.$
-Richard: I am Richard, Hello, I'm Richard the Warlock!!$
-Inconspicuous Red-brick Wall has been turned into a critter!$
-Inconspicuous Red-brick Wall has been burnt to a crisp!$
-Richard: My job here is done!$
 ```
 
 # sources
