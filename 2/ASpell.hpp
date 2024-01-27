@@ -18,9 +18,8 @@ class ASpell {
   public:
                     ASpell     (const std::string &name, const std::string &effects);
                     ~ASpell    ();
-
-  const std::string &getName   ()                                                   const;
-  const std::string &getEfects ()                                                   const;
+  const std::string &getName   ()                                                     const;
+  const std::string &getEfects ()                                                   b  const;
   const *ASpell     clone      (const &ATarget) = 0;
   void              launch     (const &ATarget);
 };

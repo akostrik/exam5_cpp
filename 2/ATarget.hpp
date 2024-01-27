@@ -17,9 +17,8 @@ class ATarget {
   public:
                     ATarget       (const std::string &type);
                     ~ATarget      ();
-
   const std::string &getType      ()                         const;
-  const *ATarget    clone         (const &ATarget) = 0;
+  const *ATarget    clone         (const &ATarget) = 0       const;
   void              getHitBySpell (const &ASpell);
 };
 
