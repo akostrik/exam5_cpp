@@ -315,16 +315,15 @@ A new attribute                              // store the spells your Warlock kn
 ```
 
 # 2 short subject
-## Create two spells, on the same model as Fwoosh
 ## Fireball, Polymorph
-```
-Fireball (Name: "Fireball", Effects: "burnt to a crisp")
-Polymorph (Name: "Polymorph", Effects: "turned into a critter")
-```
+Create two spells, on the same model as Fwoosh  
+Fireball (Name: "Fireball", Effects: "burnt to a crisp")  
+Polymorph (Name: "Polymorph", Effects: "turned into a critter")  
 ## BrickWall
-* just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
+Just so he won't have only dummy to attack, let's make a new target for him, which will be the BrickWall (Type: "Inconspicuous Red-brick Wall")
 
-## SpellBook class, in canonical form
+## SpellBook class
+canonical form  
 can't be copied or instantiated by copy  
 ```
 void learnSpell(ASpell*), that COPIES a spell in the book
@@ -334,7 +333,8 @@ ASpell* createSpell(string const &), that receives a string corresponding to the
 Modify the Warlock, now, make it have a spell book that will be created with him and destroyed with him. Also make his learnSpell and forgetSpell functions call those of the spell book.  
 The launchSpell function will have to use the SpellBook to create the spell it's attempting to launch.  
 
-## TargetGenerator class, in canonical form
+## TargetGenerator class
+canonical form  
 non-copyable  
 ```
 void learnTargetType(ATarget*)        // teaches a target to the generator
