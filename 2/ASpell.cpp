@@ -1,22 +1,20 @@
-# include "Warlock.hpp"
+# include "ASpell.hpp"
 
-Warlock::Warlock(std::string const &name, std::string const &title) {
-  this->name  = name;
-  this->title = title;
-  std::cout << this->name << ": This looks like another boring day." << std::endl;
+ASpell::ASpell(std::string const &name, std::string const &effects) {
+  this->name    = name;
+  this->effects = effects;
 };
 
-Warlock::Warlock (const Warlock& obj) {
+ASpell::ASpell(const ASpell& obj) {
   *this = obj;
 };
 
-Warlock::~Warlock() {
-  std::cout << this->name << ": My job here is done!" << std::endl;
+ASpell::~ASpell() {
 };
 
-Warlock& Warlock::operator = (const Warlock& obj) {
-  this->name  = obj.getName();
-  this->title = obj.getTitle();
+ASpell& ASpell::operator = (const ASpell& obj) {
+  this->name    = obj.getName();
+  this->effects = obj.getEffects();
   return *this;
 };
 
@@ -24,14 +22,12 @@ std::string const &Warlock::getName() const {
   return this->name;
 };
 
-std::string const &Warlock::getTitle() const {
-  return this->title;
+std::string const &ASpell::getEffects() const {
+  return this->effects;
 };
 
-void Warlock::Warlock::introduce() const {
-  std::cout << this->name << ": I am " << this->name << ", " << this->title << "!" << std::endl;
+// calls the getHitBySpell of the passed object, passing the current instance as parameter
+void ASpell::launch(const &ATarget t) {
+  t.getHitBySpell(this);
 };
 
-void Warlock::setTitle (std::string const &title) {
-  this->title = title;
-}

@@ -1,15 +1,8 @@
-#ifndef ASPELL_HPP                                                                        ///
+#ifndef ASPELL_HPP
 # define ASPELL_HPP
 
-# include <string>                                                                         ///
+# include <string>
 # include <iostream>
-
-constructor                   // takes its name and its effects, in that order
-getName()                     // callable on a constant object
-getEffects()                  // returns strings, callable on a constant object
-clone                         // pure method, returns a pointer to ASpell, callable on a constant object
-a launch function             // takes a reference to constant ATarget,calls the getHitBySpell of the passed object, passing the current instance as parameter
-
 
 class ASpell {
 
@@ -17,18 +10,19 @@ class ASpell {
   std::string name;
   std::string effects;
 
-                    ASpell    ();
-                    ASpell    (const ASpell& obj);                                       /// const
-  ASpell&          operator = (const ASpell& obj);
+  private:
+                    ASpell     ();
+                    ASpell     (const ASpell& obj);
+  ASpell&          operator =  (const ASpell& obj);
 
   public:
-                    ASpell    (const std::string &name, const std::string &title);        /// const, &
-                    ~ASpell   ();
+                    ASpell     (const std::string &name, const std::string &effects);
+                    ~ASpell    ();
 
-  const std::string &getName   ()                                                   const; /// const const
-  const std::string &getTitle  ()                                                   const;
-  void              introduce  ()                                                   const; /// const
-  void              setTitle   (const std::string &title);
+  const std::string &getName   ()                                                   const;
+  const std::string &getEfects ()                                                   const;
+  const *ASpell     clone      (const &ATarget) = 0;
+  void              launch     (const &ATarget);
 };
 
 #endif
