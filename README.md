@@ -25,33 +25,27 @@ will not be able to be copied, instantiated by copy, or instantiated without a
 name and a title.
 
 For example :
-
+```
 Warlock bob;                            //Does not compile
 Warlock bob("Bob", "the magnificent");  //Compiles
 Warlock jim("Jim", "the nauseating");   //Compiles
 bob = jim;                              //Does not compile
 Warlock jack(jim);                      //Does not compile
-
-Upon creation, the Warlock says :
-
-<NAME>: This looks like another boring day.
+```
+Upon creation, the Warlock says : `<NAME>: This looks like another boring day.`
 
 Of course, whenever we use placeholders like `<NAME>`, `<TITLE`>, etc...
 in outputs, you will replace them by the appropriate value. Without the `<` and `>`.
 
-When he dies, he says:
-
-`<NAME>: My job here is done!`
+When he dies, he says: `<NAME>: My job here is done!`
 
 Our Warlock must also be able to introduce himself, while boasting with all its
 might.
 
 So you will write the following function:
-* void introduce() const;
+`* void introduce() const;`
 
-It must display:
-
-`<NAME>: I am <NAME>, <TITLE>!`
+It must display: `<NAME>: I am <NAME>, <TITLE>!`
 
 Here's an example of a test main function and its associated output:
 ```
