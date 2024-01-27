@@ -12,10 +12,10 @@ class ATarget {
   public:
                              ATarget       ();
                              ATarget       (const std::string type);
-  virtual                    ~ATarget      ();                                  /// virtual ?
+  virtual                    ~ATarget      ();
                              ATarget       (const ATarget& obj);
                 ATarget&     operator =    (const ATarget& obj);
   const         std::string& getType       ()                        const;
-  virtual       ATarget*     clone         ()                        const = 0; /// ???
-                void         getHitBySpell (const ASpell& spell)     const;     /// const
+  virtual       ATarget*     clone         ()                        const = 0;
+                void         getHitBySpell (const ASpell& spell)     const;
 };

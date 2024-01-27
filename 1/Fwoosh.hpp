@@ -1,7 +1,7 @@
 #pragma once
 #include "ASpell.hpp"
 
-class Fwoosh : public ASpell {                       /// public
+class Fwoosh : public ASpell {             /// public
 
   public:
                     Fwoosh     ();

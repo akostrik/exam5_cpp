@@ -3,7 +3,7 @@
 Warlock::Warlock() {
 };
 
-Warlock::Warlock(std::string const name, std::string const title): _name(name), _title(title){
+Warlock::Warlock(std::string const name, std::string const title): _name(name), _title(title) {
   std::cout << _name << ": This looks like another boring day.\n";
 };
 
@@ -38,16 +38,16 @@ void Warlock::setTitle (std::string const &title) {
 }
 
 void Warlock::learnSpell (ASpell* spell) {
-  if(spell && _spellBook.find(spell->getName()) == _spellBook.end())
+  if(spell && _spellBook.find(spell->getName()) == _spellBook.end()) /// spell && find end
     _spellBook[spell->getName()] = spell->clone();
 }
 
 void Warlock::forgetSpell(std::string spellName) {
-  if(_spellBook.find(spellName) != _spellBook.end())
+  if(_spellBook.find(spellName) != _spellBook.end())                 /// erase
     _spellBook.erase(_spellBook.find(spellName));
 }
 
 void Warlock::launchSpell(std::string spellName, ATarget& target) {
-  if (_spellBook.find(spellName) != _spellBook.end())
+  if (_spellBook.find(spellName) != _spellBook.end())                /// 
     _spellBook[spellName]->launch(target);
 }
