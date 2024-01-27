@@ -266,11 +266,11 @@ void setTitle(a ref to const std::string)
 void introduce() const
 ```
 ```
-  Warlock bob;                            // does not compile, can not be instantiated without a name and a title
-  Warlock bob("Bob", "the magnificent");  // compiles
-  Warlock jim("Jim", "the nauseating");   // compiles
-  bob = jim;                              // does not compile, can not be copied without a name and a title
-  Warlock jack(jim);                      // does not compile, can not be instantiated by copy a name and a title
+Warlock bob;                            // does not compile, can not be instantiated without a name and a title
+Warlock bob("Bob", "the magnificent");  // compiles
+Warlock jim("Jim", "the nauseating");   // compiles
+bob = jim;                              // does not compile, can not be copied without a name and a title
+Warlock jack(jim);                      // does not compile, can not be instantiated by copy a name and a title
 ```
 
 # 1 short subject
