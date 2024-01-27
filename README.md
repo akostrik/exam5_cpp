@@ -317,7 +317,7 @@ getHitBySpell(const &ASpell)  // displays <TYPE> has been <EFFECTS>! (<TYPE> = A
 ## **Fwoosh**, an implementation of ASpell
 ```
 default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
-clone()                       // method, in the case of Fwoosh, returns a pointer to a new Fwoosh object
+clone()                       // in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
 ## **Dummy**, a concrete ATarget 
