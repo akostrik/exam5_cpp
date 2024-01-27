@@ -138,7 +138,7 @@ Fwoosh, it will return a pointer to a new Fwoosh object.
 In the same way, create a concrete ATarget called **Dummy**, the type of which
 is "Target Practice Dummy". You must also implement its clone() method.
 
-Add to the Warlock the following member functions:
+Add to the **Warlock** the following member functions:
 
 * learnSpell, takes a pointer to ASpell, that makes the Warlock learn a spell
 * forgetSpell, takes a string corresponding a to a spell's name, and makes the
