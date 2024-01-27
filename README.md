@@ -350,8 +350,6 @@ ATarget* createTarget(string const &) // that creates a target of the specified 
 ```
 
 # sources
-* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp
-* Expected files Warlock.cpp Warlock.hpp ASpell.hpp ASpell.cpp ATarget.hpp ATarget.cpp Fwoosh.hpp Fwoosh.cpp Dummy.hpp Dummy.cpp Fireball.hpp Fireball.cpp Polymorph.hpp Polymorph.cpp BrickWall.hpp BrickWall.cpp SpellBook.hpp SpellBook.cpp TargetGenerator.hpp TargetGenerator.cpp
 https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05  
 https://github.com/Saxsori/42-ExamRank05  
 https://github.com/pasqualerossi/42-School-Exam-Rank-05  
