@@ -1,8 +1,5 @@
-#ifndef WARLOCK_HPP
-# define WARLOCK_HPP
-
-# include <string>
-# include <iostream>
+#pragma once
+#include <iostream>
 
 class Warlock {
 
@@ -22,5 +19,3 @@ class Warlock {
   void              introduce  ()                                                   const; /// const
   void              setTitle   (const std::string &title);
 };
-
-#endif

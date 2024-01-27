@@ -1,27 +1,25 @@
-#ifndef ASPELL_HPP
-# define ASPELL_HPP
+#pragma once
+#include <iostream>
+#include "ATarget.hpp"
 
-# include <string>
-# include <iostream>
+class ATarget;                                                                                       ///
 
 class ASpell {
 
   protected:
-  std::string name;
-  std::string effects;
+          std::string  _name;
+          std::string  _effects;
 
-  private:
-                    ASpell     ();
-                    ASpell     (const ASpell& obj);
-  ASpell&          operator =  (const ASpell& obj);
+  private:                                                                                           /// ?
+                       ASpell     ();
+                       ASpell     (const ASpell& obj);
+          ASpell&      operator = (const ASpell& obj);
 
   public:
-                    ASpell     (const std::string &name, const std::string &effects);
-                    ~ASpell    ();
-  const std::string &getName   ()                                                     const;
-  const std::string &getEfects ()                                                   b  const;
-  const *ASpell     clone      (const &ATarget) = 0;
-  void              launch     (const &ATarget);
+                       ASpell     (const std::string name, const std::string effects);
+  virtual              ~ASpell    ();                                                               /// virtual ?
+  const   std::string& getName    ()                                                     const;
+  const   std::string& getEffects ()                                                     const;
+  virtual ASpell*      clone      ()                                       const = 0; /// const const ? virtual
+  void                 launch     (ATarget&)                                       const;     /// const
 };
-
-#endif
