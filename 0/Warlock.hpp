@@ -7,7 +7,7 @@ class Warlock {
          std::string name;
          std::string title;
                      Warlock    ();
-                     Warlock    (const Warlock& obj);                                     /// all args const
+                     Warlock    (const Warlock& obj);                                     /// all args const ex 0 and ex 1 кроме добавочных в worlock
          Warlock&    operator = (const Warlock& obj);
 
   public:
