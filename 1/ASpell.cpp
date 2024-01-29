@@ -7,13 +7,14 @@ ASpell::ASpell(const ASpell& obj) {
   *this = obj;
 };
 
-ASpell::~ASpell() {
-};
 
 ASpell& ASpell::operator = (const ASpell& obj) {
   _name = obj.getName();
   _effects = obj.getEffects();
   return *this;
+};
+
+ASpell::~ASpell() {
 };
 
 std::string const ASpell::getName() const {
@@ -24,7 +25,8 @@ std::string const ASpell::getEffects() const {
   return _effects;
 };
 
+/////////////////////////////////////////////////////////
 void ASpell::launch(const ATarget& target) {
-  target.getHitBySpell(*this);                                /// *
+  target.getHitBySpell(*this);                                 ///
 };
 

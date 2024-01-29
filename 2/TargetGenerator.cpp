@@ -3,18 +3,19 @@
 TargetGenerator::TargetGenerator() {
 }
 
-TargetGenerator::~TargetGenerator() {
-}
-
 TargetGenerator::TargetGenerator(const TargetGenerator& obj) {
-	*this = obj;
+  *this = obj;
 }
 
 TargetGenerator & TargetGenerator::operator=(const TargetGenerator& obj) {
-	_target = obj._target;
-	return (*this);
+  _target = obj._target;
+  return (*this);
 }
 
+TargetGenerator::~TargetGenerator() {
+}
+
+/////////////////////////////////////////////////////////
 void TargetGenerator::learnTargetType(ATarget* target) {
   if (target)
     _target[target->getType()] = target;
@@ -26,8 +27,8 @@ void TargetGenerator::forgetTargetType(const std::string& target) {
 }
 
 ATarget* TargetGenerator::createTarget(const std::string& target) {
-  ATarget* tmp = NULL;
+  ATarget* newTarget = NULL;
   if (_target.find(target) != _target.end())
-    tmp = _target[target];
-  return (tmp);
+    newTarget = _target[target];
+  return (newTarget);
 }

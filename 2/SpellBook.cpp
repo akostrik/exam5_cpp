@@ -3,10 +3,10 @@
 SpellBook::SpellBook() {
 };
 
-SpellBook::~SpellBook() {                                                                                /////
-  for (std::map<std::string, ASpell*>::iterator it = _book.begin(); it != _book.end(); ++it)
-    delete it->second;
-  _book.clear();
+SpellBook::~SpellBook() {
+  for (std::map<std::string, ASpell*>::iterator it = _book.begin(); it != _book.end(); ++it) /// iterator, ++it
+    delete it->second;                                                                       /// second
+  _book.clear();                                                                             /// clear
 };
 
 SpellBook::SpellBook(const SpellBook& obj) {
@@ -18,6 +18,7 @@ SpellBook& SpellBook::operator = (const SpellBook& obj) {
   return *this;
 };
 
+/////////////////////////////////////////////////////////
 // COPIES a spell in the book
 void SpellBook::learnSpell (ASpell* spell) {
 	if (spell)

@@ -4,15 +4,17 @@
 class Warlock {
 
   private:
-         std::string name;
-         std::string title;
+         std::string _name;
+         std::string _title;
                      Warlock    ();
-                     Warlock    (const Warlock& obj);                                     /// all args const ex 0 and ex 1 кроме добавочных в worlock
+                     Warlock    (const Warlock& obj);                                     /// const
          Warlock&    operator = (const Warlock& obj);
 
   public:
                      Warlock    (const std::string name, const std::string title);
                      ~Warlock   ();
+
+  public:
   const std::string& getName    ()                                                 const; /// const const
   const std::string& getTitle   ()                                                 const;
         void         introduce  ()                                                 const;

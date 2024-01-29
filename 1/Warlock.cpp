@@ -37,6 +37,7 @@ void Warlock::setTitle (std::string const &title) {
   _title = title;
 }
 
+/////////////////////////////////////////////////////////
 void Warlock::learnSpell (ASpell* spell) {
   if(spell && _book.find(spell->getName()) == _book.end()) /// spell && find end
     _book[spell->getName()] = spell->clone(); // clone
