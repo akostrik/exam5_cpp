@@ -6,5 +6,5 @@ class Fwoosh : public ASpell {             /// public
   public:
                     Fwoosh     ();
                     ~Fwoosh    ();
-  ASpell*           clone      () const;   /// ASpell*
+  ASpell*           clone      () const;
 };

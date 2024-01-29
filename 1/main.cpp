@@ -5,12 +5,13 @@
 #include "Dummy.hpp"
 
 int main() {
-  Warlock       richard("Richard", "the Titled");
-  Dummy         bob;
-  Fwoosh*       fwoosh = new Fwoosh();
-  richard.learnSpell(fwoosh);
-  richard.introduce();
-  richard.launchSpell("Fwoosh", bob);
-  richard.forgetSpell("Fwoosh");
-  richard.launchSpell("Fwoosh", bob);
+  Warlock       warlock("WallockName", "WarlockTitle");
+  Dummy         dummy;
+  Fwoosh*       spell = new Fwoosh();
+  warlock.learnSpell(spell);
+  warlock.introduce();
+  warlock.launchSpell("Fwoosh", dummy);
+  warlock.forgetSpell("Fwoosh");
+  warlock.launchSpell("Fwoosh", dummy);
+  delete spell;
 }

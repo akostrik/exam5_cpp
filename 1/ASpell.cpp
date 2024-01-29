@@ -7,7 +7,6 @@ ASpell::ASpell(const ASpell& obj) {
   *this = obj;
 };
 
-
 ASpell& ASpell::operator = (const ASpell& obj) {
   _name = obj.getName();
   _effects = obj.getEffects();

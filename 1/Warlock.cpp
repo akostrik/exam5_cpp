@@ -12,6 +12,9 @@ Warlock::Warlock (const Warlock& obj) {
 };
 
 Warlock::~Warlock() {
+  for (std::map<std::string, ASpell*>::iterator it = _book.begin(); it != _book.end(); ++it)
+    delete it->second;
+  _book.clear();
   std::cout << _name << ": My job here is done!\n";
 };
 
@@ -44,8 +47,10 @@ void Warlock::learnSpell (ASpell* spell) {
 }
 
 void Warlock::forgetSpell(std::string spellName) {
-  if(_book.find(spellName) != _book.end())                
+  if(_book.find(spellName) != _book.end()) {
+    delete _book.find(spellName)->second;
     _book.erase(_book.find(spellName));  /// erase
+  }
 }
 
 void Warlock::launchSpell(std::string spellName, ATarget& target) {
