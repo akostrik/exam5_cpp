@@ -257,20 +257,13 @@ Richard: My job here is done!$
 ```
 private std::string name                         
 private std::string title
-constructor()                             // Warlock is not be able to be copied, instantiated by copy, or instantiated without a name and a title
-constructor(name, title)                  // the Warlock says: `<NAME>: This looks like another boring day.`
-destructor                                // he says: `<NAME>: My job here is done!`
-getName                                   // returns a ref to const string, callable on a constant Warlock
-getTitle                                  // returns a ref to const string, callable on a constant Warlock
+constructor()                             // is not be able to be copied, instantiated by copy, instantiated without a name and a title
+constructor(name, title)                  
+destructor                                
+getName                                   // callable on a constant Warlock
+getTitle                                 
 void setTitle(a ref to const std::string)
 void introduce() const
-```
-```
-Warlock bob;                            // does not compile, can not be instantiated without a name and a title
-Warlock bob("Bob", "the magnificent");  // compiles
-Warlock jim("Jim", "the nauseating");   // compiles
-bob = jim;                              // does not compile, can not be copied without a name and a title
-Warlock jack(jim);                      // does not compile, can not be instantiated by copy a name and a title
 ```
 
 # 1 short subject
@@ -281,10 +274,10 @@ Coplien's form
 protected std::string name
 protected std::string effects
 constructor(name, effects)
-getName()                     // callable on a constant object
-std::string getEffects()      // callable on a constant object
-ASpell * clone                // pure method, callable on a constant object
-launch(const &ATarget)        // takes a ref to constant ATarget, calls the getHitBySpell of the passed object, passing the current instance as parameter
+getName()                               
+std::string getEffects()                
+ASpell * clone                            // pure method
+launch(const &ATarget)                    // calls the getHitBySpell of the passed object, passing the current instance as parameter
 ```
 
 ## ATarget
@@ -293,16 +286,16 @@ Coplien's form
 ```
 std::string type
 constructor(type)
-const std::string &getType()
-clone()                       // a pure method, callable on a constant object
-getHitBySpell(const &ASpell)  // displays <TYPE> has been <EFFECTS>! (<TYPE> = ATarget's type, <EFFECTS> = getEffects())
+const std::string &getType() 
+clone()                                  // a pure method
+getHitBySpell(const &ASpell)             
 ```
 
 ## Fwoosh
 an implementation of ASpell  
 ```
-default constructor           // sets the name to "Fwoosh" and the effects to "fwooshed"
-clone()                       // in the case of Fwoosh, returns a pointer to a new Fwoosh object
+default constructor                     // sets the name to "Fwoosh" and the effects to "fwooshed"
+clone()                                 // in the case of Fwoosh, returns a pointer to a new Fwoosh object
 ```
 
 ## Dummy
@@ -314,10 +307,10 @@ clone()
 
 ## Add to the Warlock: 
 ```
-learnSpell(ASpell*)                          // makes the Warlock learn a spell
-forgetSpell(std::string spellName)           // makes the Warlock forget it. If it's not a known spell, does nothing
-launchSpell(std::string spellName, &ATarget) // launches the spell on the selected target. If it's not a known spell, does nothing
-A new attribute                              // store the spells your Warlock knows, several types fit the bill, it's up to you to choose the best one 
+learnSpell(ASpell*)                          
+forgetSpell(std::string spellName)           // if it's not a known spell, does nothing
+launchSpell(std::string spellName, &ATarget) // launches the spell on the selected target, if it's not a known spell, does nothing
+_map<std::stringm ASpell*> _book 
 ```
 
 # 2 short subject
@@ -333,24 +326,24 @@ a target BrickWall (Type: "Inconspicuous Red-brick Wall")
 canonical form  
 can't be copied or instantiated by copy  
 ```
-void learnSpell(ASpell*), that COPIES a spell in the book
-void forgetSpell(string const &), that deletes a spell from the book, except if it isn't there
-ASpell* createSpell(string const &), that receives a string corresponding to the name of a spell, creates it, and returns it
+void learnSpell(ASpell*)                   // COPIES a spell in the book
+void forgetSpell(string const &),          // deletes a spell from the book, except if it isn't there
+ASpell* createSpell(string const &)        // receives a string corresponding to the name of a spell, creates it, returns it
 ```
 
 ## Warlock
-Warlock has a spell book that will be created with him and destroyed with him.  
+A spell book that will be created and destroyed with Warlock  
 learnSpell()  
 forgetSpell()    
-launchSpell() uses the SpellBook to create the spell it's attempting to launch  
+launchSpell()                              // uses the SpellBook to create the spell it's attempting to launch  
 
 ## TargetGenerator class
 canonical form  
 non-copyable  
 ```
-void learnTargetType(ATarget*)        // teaches a target to the generator
-void forgetTargetType(string const &) // that makes the generator forget a target type if it's known
-ATarget* createTarget(string const &) // that creates a target of the specified type
+void learnTargetType(ATarget*)             // teaches a target to the generator
+void forgetTargetType(string const &)      // makes the generator forget a target type if it's known
+ATarget* createTarget(string const &)
 ```
 
 # sources
