@@ -6,7 +6,7 @@ class ASpell;
 
 class ATarget {
 
-  protected:                                                                    /// protected
+  protected:
                 std::string  _type;
 
   public:

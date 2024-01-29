@@ -4,7 +4,7 @@
 class Polymorph : public ASpell {
 
   public:
-                    Polymorph     ();
-                    ~Polymorph    ();
+                    Polymorph  ();
+                    ~Polymorph ();
   ASpell*           clone      () const;
 };

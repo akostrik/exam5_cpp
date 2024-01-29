@@ -15,7 +15,7 @@ class SpellBook {
   public:
                                  SpellBook  ();
                                  ~SpellBook ();
-  void                           learnSpell (ASpell*);       // COPIES a spell in the book
+  void                           learnSpell (ASpell*);            // COPIES a spell in the book
   void                           forgetSpell(const std::string&); // deletes a spell from the book, except if it isn't there
   ASpell*                        createSpell(const std::string&); // receives a string corresponding to the name of a spell, creates it, and returns it
 };

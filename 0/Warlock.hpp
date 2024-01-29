@@ -7,7 +7,7 @@ class Warlock {
          std::string  _name;
          std::string  _title;
                       Warlock    ();
-                      Warlock    (const Warlock& obj);                                     /// const
+                      Warlock    (const Warlock& obj);
          Warlock&     operator = (const Warlock& obj);
 
   public:
@@ -15,7 +15,7 @@ class Warlock {
                       ~Warlock   ();
 
   public:
-  const  std::string& getName    ()                                                 const; /// const const
+  const  std::string& getName    ()                                                 const;
   const  std::string& getTitle   ()                                                 const;
          void         introduce  ()                                                 const;
          void         setTitle   (const std::string &title);

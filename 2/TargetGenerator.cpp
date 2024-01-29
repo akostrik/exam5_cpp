@@ -8,27 +8,28 @@ TargetGenerator::TargetGenerator(const TargetGenerator& obj) {
 }
 
 TargetGenerator & TargetGenerator::operator=(const TargetGenerator& obj) {
-  _target = obj._target;
+  _book = obj._book;
   return (*this);
 }
 
 TargetGenerator::~TargetGenerator() {
+   // iterator delete ?
 }
 
 /////////////////////////////////////////////////////////
 void TargetGenerator::learnTargetType(ATarget* target) {
   if (target)
-    _target[target->getType()] = target;
+    _book[target->getType()] = target; // target->clone() ????
 }
 
-void TargetGenerator::forgetTargetType(const std::string& target) {
-  if (_target.find(target) != _target.end())
-    _target.erase(_target.find(target));
+void TargetGenerator::forgetTargetType(const std::string& targetName) {
+  if (_book.find(targetName) != _book.end())
+    _book.erase(_book.find(targetName));
 }
 
-ATarget* TargetGenerator::createTarget(const std::string& target) {
+ATarget* TargetGenerator::createTarget(const std::string& targetName) {
   ATarget* newTarget = NULL;
-  if (_target.find(target) != _target.end())
-    newTarget = _target[target];
+  if (_book.find(targetName) != _book.end())
+    newTarget = _book[targetName];
   return (newTarget);
 }
