@@ -5,7 +5,7 @@
 class TargetGenerator
 {
   private :
-  std::map < std::string, ATarget*> _book;                                       ///
+  std::map <std::string, ATarget*>  _book;                                       ///
                                     TargetGenerator  (const TargetGenerator& obj);
   TargetGenerator&                  operator=        (const TargetGenerator& obj);
 
