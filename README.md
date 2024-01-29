@@ -269,7 +269,6 @@ void introduce() const
 # 1 short subject
 ## ASpell 
 abstract class  
-Coplien's form  
 ```
 protected std::string name
 protected std::string effects
@@ -282,7 +281,6 @@ launch(const &ATarget)                    // calls the getHitBySpell of the pass
 
 ## ATarget
 abstract class  
-Coplien's form  
 ```
 std::string type
 constructor(type)
@@ -323,7 +321,6 @@ Polymorph (Name: "Polymorph", Effects: "turned into a critter")
 a target BrickWall (Type: "Inconspicuous Red-brick Wall")
 
 ## SpellBook class
-canonical form  
 can't be copied or instantiated by copy  
 ```
 void learnSpell(ASpell*)                   // COPIES a spell in the book
@@ -338,7 +335,6 @@ forgetSpell()
 launchSpell()                              // uses the SpellBook to create the spell it's attempting to launch  
 
 ## TargetGenerator class
-canonical form  
 non-copyable  
 ```
 void learnTargetType(ATarget*)             // teaches a target to the generator
