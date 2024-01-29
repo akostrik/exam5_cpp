@@ -2,7 +2,7 @@
 #include <iostream>
 #include "ATarget.hpp"
 
-class BrickWall.hpp : public ATarget {
+class BrickWall : public ATarget {
 
   public:
               BrickWall  ();

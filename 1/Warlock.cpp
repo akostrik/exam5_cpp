@@ -38,16 +38,16 @@ void Warlock::setTitle (std::string const &title) {
 }
 
 void Warlock::learnSpell (ASpell* spell) {
-  if(spell && _spellBook.find(spell->getName()) == _spellBook.end()) /// spell && find end
-    _spellBook[spell->getName()] = spell->clone(); // clone
+  if(spell && _book.find(spell->getName()) == _book.end()) /// spell && find end
+    _book[spell->getName()] = spell->clone(); // clone
 }
 
 void Warlock::forgetSpell(std::string spellName) {
-  if(_spellBook.find(spellName) != _spellBook.end())                
-    _spellBook.erase(_spellBook.find(spellName));  /// erase
+  if(_book.find(spellName) != _book.end())                
+    _book.erase(_book.find(spellName));  /// erase
 }
 
 void Warlock::launchSpell(std::string spellName, ATarget& target) {
-  if (_spellBook.find(spellName) != _spellBook.end())                
-    _spellBook[spellName]->launch(target);
+  if (_book.find(spellName) != _book.end())                
+    _book[spellName]->launch(target);
 }
