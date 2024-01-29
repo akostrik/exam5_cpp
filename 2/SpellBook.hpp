@@ -7,7 +7,7 @@ class ASpell;
 
 class SpellBook {
 
-  private:
+  private:                                                           // can't be copied or instantiated by copy
   std::map<std::string, ASpell*> _book;
                                  SpellBook   (const SpellBook& obj);
   SpellBook&                     operator =  (const SpellBook& obj);
