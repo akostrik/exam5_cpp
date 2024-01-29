@@ -11,23 +11,21 @@
 
 int main()
 {
-  Warlock richard("Richard", "foo");
-  richard.setTitle("Hello, I'm Richard the Warlock!");
+  Warlock warlock1("Warlock1", "title1");
+  warlock1.setTitle("title2");
   BrickWall model1;
 
-  Polymorph* polymorph = new Polymorph();
+  Polymorph* spell1 = new Polymorph();
   TargetGenerator tarGen;
-
   tarGen.learnTargetType(&model1);
-  richard.learnSpell(polymorph);
+  warlock1.learnSpell(spell1);
 
-  Fireball* fireball = new Fireball();
+  Fireball* spell2 = new Fireball();
 
-  richard.learnSpell(fireball);
- 
-  ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+  warlock1.learnSpell(spell2);
+  ATarget* target1 = tarGen.createTarget("Target1");
 
-  richard.introduce();
-  richard.launchSpell("Polymorph", *wall);
-  richard.launchSpell("Fireball", *wall);
+  warlock1.introduce();
+  warlock1.launchSpell("spell1", *target1);
+  warlock1.launchSpell("spell3", *target1);
 }

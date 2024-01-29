@@ -36,8 +36,8 @@ void SpellBook::forgetSpell(const std::string& spellName) {
 
 // receives a string corresponding to the name of a spell, creates it, and returns it
 ASpell* SpellBook::createSpell(const std::string& spellName) {
-  if (_book.find(spellName) != _book.end())
   ASpell* newSpell = NULL;
-    newSpell = _book[spellName]; // clone() ?
+  if (_book.find(spellName) != _book.end())
+    newSpell = _book[spellName]->clone(); //  ?
   return (newSpell);
 }
