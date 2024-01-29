@@ -7,5 +7,5 @@ class Dummy : public ATarget {
   public:
               Dummy  ();
               ~Dummy ();
-  ATarget*    clone  () const;   /// Dummy* ATarget ?
+  ATarget*    clone  () const;
 };
