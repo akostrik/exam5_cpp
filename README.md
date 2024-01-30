@@ -43,7 +43,7 @@ Our Warlock must also be able to introduce himself, while boasting with all its
 might.
 
 So you will write the following function:
-`* void introduce() const;`
+`void introduce() const;`
 
 It must display: `<NAME>: I am <NAME>, <TITLE>!`
 
