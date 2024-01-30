@@ -1,6 +1,6 @@
 # include "ATarget.hpp"
 
-ATarget::ATarget() { // ?
+ATarget::ATarget() {
 };
 
 ATarget::ATarget(std::string const type): _type(type) {
