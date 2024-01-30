@@ -19,7 +19,7 @@ TargetGenerator::~TargetGenerator() {
 /////////////////////////////////////////////////////////
 void TargetGenerator::learnTargetType(ATarget* target) {
   if (target)
-    _book[target->getType()] = target; // target->clone() ????
+    _book[target->getType()] = target->clone();
 }
 
 void TargetGenerator::forgetTargetType(const std::string& targetName) {

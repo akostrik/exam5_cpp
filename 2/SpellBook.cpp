@@ -19,22 +19,18 @@ SpellBook& SpellBook::operator = (const SpellBook& obj) {
 };
 
 /////////////////////////////////////////////////////////
-// COPIES a spell in the book
 void SpellBook::learnSpell (ASpell* spell) {
-	if (spell)
-		_book[spell->getName()] = spell->clone();
+  if (spell)
+    _book[spell->getName()] = spell->clone();
 }
 
-// deletes a spell from the book, except if it isn't there
 void SpellBook::forgetSpell(const std::string& spellName) {
-  std::map<std::string, ASpell*>::iterator it = _book.find(spellName);
-  if (it != _book.end()) {
-    delete it->second;
-    _book.erase(it);
+  if (_book.find(spellName) != _book.end()) {
+    delete _book.find(spellName)->second;
+    _book.erase(_book.find(spellName));
   }
 }
 
-// receives a string corresponding to the name of a spell, creates it, and returns it
 ASpell* SpellBook::createSpell(const std::string& spellName) {
   ASpell* newSpell = NULL;
   if (_book.find(spellName) != _book.end())
