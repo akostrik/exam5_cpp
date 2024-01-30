@@ -347,3 +347,13 @@ https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05
 https://github.com/Saxsori/42-ExamRank05  
 https://github.com/pasqualerossi/42-School-Exam-Rank-05  
 https://github.com/NahIIo/examrank-02-03-04-05-06/tree/master/examRank05  
+
+# 
+0 hpp:  
+0 cpp:  
+1 hpp: protected virtual virtual, public  
+1 cpp: NULL
+2 hpp:  
+2 cpp:  
+s == NULL
+
