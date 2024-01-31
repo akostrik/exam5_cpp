@@ -351,7 +351,7 @@ https://github.com/NahIIo/examrank-02-03-04-05-06/tree/master/examRank05
 # 
 0 hpp:  
 0 cpp:  
-1 hpp: protected virtual virtual, public  
-1 cpp: s == NULL clone
+1 hpp: virtual virtual, public  
+1 cpp: s == NULL clone  
 2 hpp:  
-2 cpp:  
+2 cpp: return _book[name]->clone(); if (s) t.getHitBySpell(*s);
