@@ -43,7 +43,7 @@ Our Warlock must also be able to introduce himself, while boasting with all its
 might.
 
 So you will write the following function:
-`* void introduce() const;`
+`void introduce() const;`
 
 It must display: `<NAME>: I am <NAME>, <TITLE>!`
 
@@ -347,3 +347,11 @@ https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05
 https://github.com/Saxsori/42-ExamRank05  
 https://github.com/pasqualerossi/42-School-Exam-Rank-05  
 https://github.com/NahIIo/examrank-02-03-04-05-06/tree/master/examRank05  
+
+# 
+0 hpp:  
+0 cpp:  
+1 hpp: virtual virtual, public  
+1 cpp: s == NULL clone  
+2 hpp:  
+2 cpp: return _book[name]->clone(); if (s) t.getHitBySpell(*s);
