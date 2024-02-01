@@ -3,29 +3,19 @@
 #include "ATarget.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
-#include "Polymorph.hpp"
-#include "Fireball.hpp"
-#include "BrickWall.hpp"
-#include "SpellBook.hpp"
-#include "TargetGenerator.hpp"
 
-int main()
-{
-  Warlock warlock1("Warlock1", "title1");
-  warlock1.setTitle("title2");
-  BrickWall model1;
-
-  Polymorph* spell1 = new Polymorph();
-  TargetGenerator tarGen;
-  tarGen.learnTargetType(&model1);
-  warlock1.learnSpell(spell1);
-
-  Fireball* spell2 = new Fireball();
-
-  warlock1.learnSpell(spell2);
-  ATarget* target1 = tarGen.createTarget("Target1");
-
-  warlock1.introduce();
-  warlock1.launchSpell("spell1", *target1);
-  warlock1.launchSpell("spell3", *target1);
+int main() {
+  Warlock       w("name", "title");
+  Dummy         d;
+  Fwoosh*       s = new Fwoosh();
+  w.learnSpell(s);
+  w.introduce();
+  w.launchSpell("S1", d);
+  w.forgetSpell("S1");
+  w.launchSpell("S1", d);
+  w.forgetSpell("S1");
+  w.forgetSpell("S2");
+  Fwoosh*       s2 = NULL;
+  w.learnSpell(s2);
+  delete s;
 }

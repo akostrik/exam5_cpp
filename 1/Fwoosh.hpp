@@ -1,10 +1,10 @@
 #pragma once
+#include <iostream>
 #include "ASpell.hpp"
 
-class Fwoosh : public ASpell {             /// public
-
-  public:
-                    Fwoosh     ();
-                    ~Fwoosh    ();
-  ASpell*           clone      () const;
+class Fwoosh : public ASpell {
+  public :
+                      Fwoosh    ();
+                      ~Fwoosh   ();
+          ASpell*     clone     () const;
 };

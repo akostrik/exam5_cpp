@@ -5,18 +5,16 @@
 class ASpell;
 
 class ATarget {
-
-  protected:
-                std::string  _type;
+  private:       
+          std::string  _type;
+                       ATarget       ();
+                       ATarget       (const ATarget& o);
+          ATarget&     operator=     (const ATarget& o);
 
   public:
-                             ATarget       ();
-                             ATarget       (const std::string type);
-                             ATarget       (const ATarget& obj);
-                ATarget&     operator =    (const ATarget& obj);
-  virtual                    ~ATarget      ();
-
-  const         std::string& getType       ()                        const;
-  virtual       ATarget*     clone         ()                        const = 0;
-                void         getHitBySpell (const ASpell& spell)     const;
+                       ATarget       (std::string t);
+                       ~ATarget      ();
+  const   std::string& getType       () const;
+  virtual ATarget*     clone         () const = 0;
+          void         getHitBySpell (const ASpell& s) const;
 };

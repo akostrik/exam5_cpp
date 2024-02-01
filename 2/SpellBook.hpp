@@ -3,19 +3,16 @@
 #include <map>
 #include "ASpell.hpp"
 
-class ASpell;
-
 class SpellBook {
+  private:
+                      SpellBook   (const SpellBook& o);
+        SpellBook&    operator=   (const SpellBook& o);
 
-  private:                                                           // can't be copied or instantiated by copy
-  std::map<std::string, ASpell*> _book;
-                                 SpellBook   (const SpellBook& obj);
-  SpellBook&                     operator =  (const SpellBook& obj);
-
-  public:
-                                 SpellBook  ();
-                                 ~SpellBook ();
-  void                           learnSpell (ASpell*);            // COPIES a spell in the book
-  void                           forgetSpell(const std::string&); // deletes a spell from the book, except if it isn't there
-  ASpell*                        createSpell(const std::string&); // receives a string corresponding to the name of a spell, creates it, and returns it
+  public :
+        std::map<std::string, ASpell*> _book;
+                      SpellBook   ();
+                      ~SpellBook  ();
+        void          learnSpell  (ASpell* s);
+        void          forgetSpell (const std::string& name);
+        ASpell*       createSpell (const std::string& name);
 };

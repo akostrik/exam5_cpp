@@ -2,28 +2,24 @@
 #include <iostream>
 #include <map>
 #include "ASpell.hpp"
-#include "ATarget.hpp"
 
 class Warlock {
+  private:       
+          std::string _name;
+          std::string _title;
+          std::map<std::string, ASpell*> _book;
+                      Warlock   ();
+                      Warlock   (const Warlock& o);
+         Warlock&     operator= (const Warlock& o);
 
-  private:
-  std::string                     _name;
-  std::string                     _title;
-  std::map <std::string, ASpell*> _book;
-                                  Warlock    ();
-                                  Warlock    (const Warlock& obj);
-  Warlock&                        operator = (const Warlock& obj);
-
-  public:
-                                  Warlock    (const std::string name, const std::string title);
-                                  ~Warlock   ();
-  const std::string&              getName    ()                                                   const;
-  const std::string&              getTitle   ()                                                   const;
-  void                            setTitle   (const std::string& title);
-
-  public:
-  void                            introduce  ()                                                   const;
-  void                            learnSpell (ASpell* spell);
-  void                            forgetSpell(std::string spellName);
-  void                            launchSpell(std::string spellName, ATarget& target);
+  public :
+                      Warlock   (std::string n, std::string t);
+                      ~Warlock  ();
+  const std::string&  getName   () const;
+  const std::string&  getTitle  () const;
+        void          setTitle  (const std::string& t);
+        void          introduce() const;
+        void          learnSpell(ASpell* s);
+        void          forgetSpell(std::string n);
+        void          launchSpell(std::string n, ATarget& t);
 };

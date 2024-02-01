@@ -1,3 +1,3 @@
 clear
-c++ -std=c++98 -Wall -Wextra -Werror main.cpp Warlock.cpp Warlock.hpp
-
+c++ -std=c++98 -Wall -Werror -Wextra *.cpp
+./a.out
