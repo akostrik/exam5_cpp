@@ -1,5 +1,4 @@
-# 0 full subject
-Assignment name  : cpp_module_00
+## Assignment name  : cpp_module_00
 Expected files   : Warlock.cpp Warlock.hpp
 
 --------------------------------------------------------------------------------
@@ -77,8 +76,7 @@ Richard: My job here is done!$
 ~$
 ```
 
-# 1 full subject
-Assignment name  : cpp01_02
+## Assignment name  : cpp01_02
 Expected files   : Warlock.cpp Warlock.hpp
                    ASpell.hpp ASpell.cpp
 				   ATarget.hpp ATarget.cpp
@@ -175,8 +173,7 @@ Target Practice Dummy has been fwooshed!$
 Richard: My job here is done!$
 ```
 
-# 2 full subject 
-Assignment name  : cpp_module_02
+## Assignment name  : cpp_module_02
 Expected files   : Warlock.cpp Warlock.hpp
                    ASpell.hpp ASpell.cpp
 				   ATarget.hpp ATarget.cpp
@@ -251,107 +248,3 @@ Inconspicuous Red-brick Wall has been burnt to a crisp!$
 Richard: My job here is done!$
 ~$
 ```
-
-# 0 short subject
-## Warlock class in Coplien's form 
-```
-private std::string name                         
-private std::string title
-constructor()                             // is not be able to be copied, instantiated by copy, instantiated without a name and a title
-constructor(name, title)                  
-destructor                                
-getName                                   // callable on a constant Warlock
-getTitle                                 
-void setTitle(a ref to const std::string)
-void introduce() const
-```
-
-# 1 short subject
-## ASpell 
-abstract class  
-```
-protected std::string name
-protected std::string effects
-constructor(name, effects)
-getName()                               
-std::string getEffects()                
-ASpell * clone                            // pure method
-launch(const &ATarget)                    // calls the getHitBySpell of the passed object, passing the current instance as parameter
-```
-
-## ATarget
-abstract class  
-```
-std::string type
-constructor(type)
-const std::string &getType() 
-clone()                                  // a pure method
-getHitBySpell(const &ASpell)             
-```
-
-## Fwoosh
-an implementation of ASpell  
-```
-default constructor                     // sets the name to "Fwoosh" and the effects to "fwooshed"
-clone()                                 // in the case of Fwoosh, returns a pointer to a new Fwoosh object
-```
-
-## Dummy
-a concrete ATarget   
-its type is "Target Practice Dummy"  
-```
-clone()
-```
-
-## Add to the Warlock: 
-```
-learnSpell(ASpell*)                          
-forgetSpell(std::string spellName)           // if it's not a known spell, does nothing
-launchSpell(std::string spellName, &ATarget) // launches the spell on the selected target, if it's not a known spell, does nothing
-_map<std::stringm ASpell*> _book 
-```
-
-# 2 short subject
-## Fireball, Polymorph
-two spells, on the same model as Fwoosh  
-Fireball (Name: "Fireball", Effects: "burnt to a crisp")  
-Polymorph (Name: "Polymorph", Effects: "turned into a critter")  
-
-## BrickWall
-a target BrickWall (Type: "Inconspicuous Red-brick Wall")
-
-## SpellBook class
-can't be copied or instantiated by copy  
-```
-void learnSpell(ASpell*)                   // COPIES a spell in the book
-void forgetSpell(string const &),          // deletes a spell from the book, except if it isn't there
-ASpell* createSpell(string const &)        // receives a string corresponding to the name of a spell, creates it, returns it
-```
-
-## Warlock
-A spell book that will be created and destroyed with Warlock  
-learnSpell()  
-forgetSpell()    
-launchSpell()                              // uses the SpellBook to create the spell it's attempting to launch  
-
-## TargetGenerator class
-non-copyable  
-```
-void learnTargetType(ATarget*)             // teaches a target to the generator
-void forgetTargetType(string const &)      // makes the generator forget a target type if it's known
-ATarget* createTarget(string const &)
-```
-
-# sources
-https://github.com/42YerevanProjects/Exam_Ranks/tree/master/exam_rank05  
-https://github.com/Saxsori/42-ExamRank05  
-https://github.com/pasqualerossi/42-School-Exam-Rank-05  
-https://github.com/NahIIo/examrank-02-03-04-05-06/tree/master/examRank05  
-
-# 
-0 hpp:  
-0 cpp:  
-1 hpp: virtual virtual, public  
-1 cpp: s == NULL clone  
-2 hpp:  
-2 cpp: return _book[name]->clone(); if (s) t.getHitBySpell(*s);
